@@ -3,9 +3,13 @@ const Printer = require('node-printer');
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
+const cors = require('cors'); // Import the CORS package
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Enable CORS for all origins
+app.use(cors());
 
 // Configure multer for file uploads
 const upload = multer({ dest: 'tmp/' }); // Temporary storage location
